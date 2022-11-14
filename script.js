@@ -93,48 +93,24 @@ let knygos = {
     ]
 }
 
-let kategorijos = Object.getOwnPropertyNames(knygos);
-let i = 0;
-while(Object.keys(knygos).length >i){
-    console.log('\n\n====================================');
-    console.log(`Kategorija: ${kategorijos[i]}`)
-    console.log('====================================\n\n');
-    if(i == 0){
-        for(n=0;Object.keys(knygos.grozine[0]).length>n;n++){
-            console.log(`isbn: ${knygos.grozine[n].isbn} `);
-            console.log(`price: ${knygos.grozine[n].price} `);
-            console.log(`year: ${knygos.grozine[n].year} `);
-            console.log(`title: ${knygos.grozine[n].title} `);
-            console.log(`pagecount: ${knygos.grozine[n].pagecount} `);
-            console.log('\n\n')
+
+let kategorijos = Object.getOwnPropertyNames(knygos.grozine[0]);
+
+for (let key in knygos){
+    for(key2 in knygos[key]){
+        for(key3 in knygos[key][key2]){
+          function outputas(){
+            console.log(`${key3}:${knygos[key][key2][key3]}`)
+          }
+          outputas();
         }
-    } else if(i == 1){
-        for(n=0;Object.keys(knygos.scifi[0]).length-1>n;n++){
-            console.log(`isbn: ${knygos.scifi[n].isbn} `);
-            console.log(`price: ${knygos.scifi[n].price} `);
-            console.log(`year: ${knygos.scifi[n].year} `);
-            console.log(`title: ${knygos.scifi[n].title} `);
-            console.log(`pagecount: ${knygos.scifi[n].pagecount} `);
-            console.log('\n\n')        }
-    } 
-    // else {
-    //     for(n=0;Object.keys(knygos.myTextOptions['skandinaviski detektyvai'][0]).length-1>n;n++){
-    //         console.log(`isbn: ${knygos.scifi[n].isbn} `);
-    //         console.log(`price: ${knygos.scifi[n].price} `);
-    //         console.log(`year: ${knygos.scifi[n].year} `);
-    //         console.log(`title: ${knygos.scifi[n].title} `);
-    //         console.log(`pagecount: ${knygos.scifi[n].pagecount} `);
-    //         console.log('\n\n')        }
-    // }
-
-
-
-
-
-    
-    
-    i++;
+    }
 }
 
 
-console.log(knygos[1])
+
+
+
+
+
+
